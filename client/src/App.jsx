@@ -12,6 +12,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import NotFound from "./pages/NotFound";
 import ProtectedAdmin from "./ui/ProtectedAdmin";
 import Dashboard from "./pages/Dashboard";
+import LayoutAdminPage from "./ui/LayoutAdminPage";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -28,7 +29,9 @@ function App() {
                 <Route path="/favoriets" element={<Favorites />} />
               </Route>
               <Route element={<ProtectedAdmin />}>
-                <Route path="/admin" element={<Dashboard />} />
+                <Route element={<LayoutAdminPage />}>
+                  <Route path="/adminDashboard" element={<Dashboard />} />
+                </Route>
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
