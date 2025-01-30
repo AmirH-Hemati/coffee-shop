@@ -14,7 +14,7 @@ function Header() {
       <NavLink path="/login">
         <p>login</p>
       </NavLink>
-      <NavLink path="/" classNameStyle="absolute left-0 p-2">
+      <NavLink path="/cart" classNameStyle="absolute left-0 p-2">
         <p>{getTotalQty() > 0 && getTotalQty()}</p>
         <ShoppingCart size="32" color="#FF8A65" />
       </NavLink>
