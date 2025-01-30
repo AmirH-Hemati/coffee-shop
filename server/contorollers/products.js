@@ -15,3 +15,9 @@ export async function product(req, res) {
   const product = await Products.findOne({ _id: id });
   res.json({ message: "ok", data: product });
 }
+
+export async function removeProduct(req, res) {
+  const { id } = req.params;
+  const result = await Products.deleteOne({ _id: id });
+  res.json({ message: "product seccssesfully removed", data: result });
+}
