@@ -9,12 +9,15 @@ import ShopingCart from "./pages/ShopingCart";
 import ProtectedRout from "./ui/ProtectedRout";
 import Favorites from "./pages/Favorites";
 import { AuthContextProvider } from "./context/AuthContext";
+import NotFound from "./pages/NotFound";
+import ProtectedAdmin from "./ui/ProtectedAdmin";
+import Dashboard from "./pages/Dashboard";
 function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <ShopingCartProvider>
-        <AuthContextProvider>
+      <AuthContextProvider>
+        <ShopingCartProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -24,10 +27,14 @@ function App() {
                 <Route path="/cart" element={<ShopingCart />} />
                 <Route path="/favoriets" element={<Favorites />} />
               </Route>
+              <Route element={<ProtectedAdmin />}>
+                <Route path="/admin" element={<Dashboard />} />
+              </Route>
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </AuthContextProvider>
-      </ShopingCartProvider>
+        </ShopingCartProvider>
+      </AuthContextProvider>
     </QueryClientProvider>
   );
 }
