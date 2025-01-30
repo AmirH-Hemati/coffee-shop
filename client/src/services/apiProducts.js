@@ -4,6 +4,12 @@ export async function getProducts() {
   const { data } = await axios.get(
     "http://localhost:1111/api/products/products"
   );
-  console.log(data);
+  return data;
+}
+
+export async function getProduct(id) {
+  const { data } = await axios.get(
+    `http://localhost:1111/api/products/products/${id}`
+  );
   return data;
 }

@@ -9,3 +9,9 @@ export async function addProduct(req, res) {
   const product = await Products.create({ name, price });
   res.json({ message: "ok", data: product });
 }
+export async function product(req, res) {
+  const { id } = req.params;
+  console.log(id);
+  const product = await Products.findOne({ _id: id });
+  res.json({ message: "ok", data: product });
+}
