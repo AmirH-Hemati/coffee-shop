@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProductPage from "./pages/ProductPage";
 import Login from "./pages/Login";
-import { ShopingCartProvider } from "./context/ShopingCart";
+import { ShopingCartProvider } from "./context/ShopingContext";
 import ShopingCart from "./pages/ShopingCart";
 import ProtectedRout from "./ui/ProtectedRout";
 function App() {

@@ -1,4 +1,4 @@
-import { useAddCart } from "../context/ShopingCart";
+import { useAddCart } from "../context/ShopingContext";
 import NavLink from "./NavLink";
 import { ShoppingCart } from "iconsax-react";
 function Header() {

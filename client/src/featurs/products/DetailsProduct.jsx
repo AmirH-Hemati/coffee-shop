@@ -1,9 +1,11 @@
-import { useAddCart } from "../../context/ShopingCart";
+import { useAddCart } from "../../context/ShopingContext";
+import ButtonAddCart from "../../ui/ButtonAddCart";
 import { useProduct } from "./useProduct";
 
 function DetailsProduct() {
-  const { handelIncreaseAddCart } = useAddCart();
+  const { handelIncreaseAddCart, getQty } = useAddCart();
   const { product } = useProduct();
+
   return (
     <div className="w-full  h-full md:flex items-center gap-2 md:p-2 ">
       <div className="md:w-1/2 h-1/2 md:rounded-lg">
@@ -28,12 +30,16 @@ function DetailsProduct() {
             alias quam veniam unde nisi ratione dolorem illo suscipit assumenda
           </p>
         </div>
-        <button
-          className="w-full p-2 bg-red-500 text-white rounded-lg mt-2 md:mt-0"
-          onClick={() => handelIncreaseAddCart(product.data._id)}
-        >
-          add to cart | 500%
-        </button>
+        {getQty(product?.data._id) > 0 ? (
+          <ButtonAddCart id={product?.data._id} />
+        ) : (
+          <button
+            className="w-full p-2 bg-red-500 text-white rounded-lg mt-2 md:mt-0"
+            onClick={() => handelIncreaseAddCart(product.data._id)}
+          >
+            add to cart | 500%
+          </button>
+        )}
       </div>
     </div>
   );
