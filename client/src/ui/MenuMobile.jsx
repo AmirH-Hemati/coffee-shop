@@ -12,7 +12,7 @@ function MenuMobile() {
       <NavLink path={`/`}>
         <ShoppingCart size="32" color="#FF8A65" />
       </NavLink>
-      <NavLink path={`/`}>
+      <NavLink path={`/login`}>
         <LoginCurve size="32" color="#FF8A65" />
       </NavLink>
     </nav>
