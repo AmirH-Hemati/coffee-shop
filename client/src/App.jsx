@@ -30,8 +30,8 @@ function App() {
               <Route element={<ProtectedAdmin />}>
                 <Route path="/admin" element={<Dashboard />} />
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Route>
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </ShopingCartProvider>
       </AuthContextProvider>

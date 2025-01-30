@@ -6,7 +6,7 @@ function ProtectedAdmin() {
   if (!token || role !== "admin") {
     return <Navigate to={`/notFound`} />;
   }
-  <Outlet />;
+  return <Outlet />;
 }
 
 export default ProtectedAdmin;
