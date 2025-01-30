@@ -11,8 +11,9 @@ import Favorites from "./pages/Favorites";
 import { AuthContextProvider } from "./context/AuthContext";
 import NotFound from "./pages/NotFound";
 import ProtectedAdmin from "./ui/ProtectedAdmin";
-import Dashboard from "./pages/Dashboard";
 import LayoutAdminPage from "./ui/LayoutAdminPage";
+import Dashboard from "./pages/Dashboard";
+import AddProduct from "./pages/AddProduct";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route element={<ProtectedAdmin />}>
                 <Route element={<LayoutAdminPage />}>
                   <Route path="/adminDashboard" element={<Dashboard />} />
+                  <Route path="/addProduct" element={<AddProduct />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />
