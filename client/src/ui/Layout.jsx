@@ -6,8 +6,8 @@ function Layout() {
   return (
     <div className="flex flex-col h-screen w-full">
       <Header />
-      <MenuMobile />
-      <main className="bg-white flex-1">
+    <MenuMobile />
+      <main className=" flex-1 overflow-hidden">
         <Outlet />
       </main>
     </div>

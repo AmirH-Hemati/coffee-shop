@@ -3,7 +3,7 @@ import { useProduct } from "./useProduct";
 function DetailsProduct() {
   const { product } = useProduct();
   return (
-    <div className="w-full  h-full md:flex items-center gap-2 md:p-2">
+    <div className="w-full  h-full md:flex items-center gap-2 md:p-2 ">
       <div className="md:w-1/2 h-1/2 md:rounded-lg">
         <img
           src={product?.data?.image}
@@ -11,7 +11,7 @@ function DetailsProduct() {
           alt={product?.data?.name}
         />
       </div>
-      <div className="relative  p-4 md: md:px-2 w-full md:w-1/2 h-1/2 bg-white flex flex-col justify-between  -mt-5 md:-mt-0 z-40 rounded-t-3xl md:rounded-lg md:[box-shadow:0_0_5px_black]">
+      <div className="relative   p-4 md: md:px-2 w-full md:w-1/2 h-1/2 bg-white flex flex-col justify-between  -mt-5 md:-mt-0 z-50 rounded-t-3xl md:rounded-lg md:[box-shadow:0_0_5px_black]">
         <div>
           <h3>{product?.data?.name}</h3>
           <h3>{product?.data?.rating}</h3>
