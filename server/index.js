@@ -17,6 +17,7 @@ mongoose
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static("images"));
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
 app.listen(1111, () => {

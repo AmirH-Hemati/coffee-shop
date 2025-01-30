@@ -3,9 +3,10 @@ import { addProduct as addProductAPI } from "../../services/apiProducts";
 import { toast } from "react-toastify";
 
 export function useAddProduct() {
+  const token = localStorage.getItem("token");
   const queryClient = useQueryClient();
   const { mutate: addProduct, isLoading } = useMutation({
-    mutationFn: (formData) => addProductAPI(formData),
+    mutationFn: (formData) => addProductAPI(formData, token),
     onSuccess: (product) => {
       console.log(product);
       queryClient.setQueriesData(["product", product]);

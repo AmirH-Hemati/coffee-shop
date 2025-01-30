@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
+  console.log(product.image);
   return (
     <Link to={`/products/${product._id}`} className="h-full">
       <li className="flex flex-col  h-full [box-shadow:2px_2px_2px_rgba(0,0,0,0.1)]   rounded-xl p-2 cursor-pointer">
         <div className="">
           <img
-            src={product.image}
+          src={product.image}
             alt={product.name}
             className="w-full rounded-xl"
           />

@@ -14,9 +14,11 @@ export async function getProduct(id) {
   return data;
 }
 
-export async function addProduct(productData) {
+export async function addProduct(productData, token) {
   const { data } = await axios.post(
     "http://localhost:1111/api/products/addProduct",
-    productData
+    productData,
+    { headers: { authorization: token } }
   );
+  return data;
 }
