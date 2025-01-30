@@ -32,5 +32,5 @@ export async function login(req, res) {
   }
   ////create jwt
   const token = jwt.sign({ _id: user._id }, "dwqdwqgremnjdwqjhldwq");
-  res.json({ message: "ok", data: token });
+  res.json({ message: "ok", data: token, role: user.role });
 }

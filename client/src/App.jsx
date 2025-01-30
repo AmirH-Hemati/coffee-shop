@@ -8,22 +8,25 @@ import { ShopingCartProvider } from "./context/ShopingContext";
 import ShopingCart from "./pages/ShopingCart";
 import ProtectedRout from "./ui/ProtectedRout";
 import Favorites from "./pages/Favorites";
+import { AuthContextProvider } from "./context/AuthContext";
 function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
       <ShopingCartProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/products/:id" element={<ProductPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route element={<ProtectedRout />}>
-              <Route path="/cart" element={<ShopingCart />} />
-              <Route path="/favoriets" element={<Favorites />} />
+        <AuthContextProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/products/:id" element={<ProductPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route element={<ProtectedRout />}>
+                <Route path="/cart" element={<ShopingCart />} />
+                <Route path="/favoriets" element={<Favorites />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </AuthContextProvider>
       </ShopingCartProvider>
     </QueryClientProvider>
   );
