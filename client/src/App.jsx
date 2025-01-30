@@ -6,6 +6,7 @@ import ProductPage from "./pages/ProductPage";
 import Login from "./pages/Login";
 import { ShopingCartProvider } from "./context/ShopingCart";
 import ShopingCart from "./pages/ShopingCart";
+import ProtectedRout from "./ui/ProtectedRout";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -13,10 +14,12 @@ function App() {
       <ShopingCartProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="/products/:id" element={<ProductPage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cart" element={<ShopingCart />} />
+            <Route element={<ProtectedRout />}>
+              <Route path="/cart" element={<ShopingCart />} />
+            </Route>
           </Route>
         </Routes>
       </ShopingCartProvider>
