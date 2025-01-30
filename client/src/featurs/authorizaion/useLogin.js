@@ -9,9 +9,11 @@ export function useLogin() {
   const { mutate: login, isLoading } = useMutation({
     mutationFn: ({ email, password }) => loginAPI({ email, password }),
     onSuccess: (user) => {
-      queryClient.setQueryData(["user", user.data._id]);
+      console.log(user.data);
+      queryClient.setQueryData(["user", user.data]);
       toast.success("welcome ...");
       navigate("/");
+      localStorage.setItem("token", user.data);
     },
     onError: (err) => {
       toast.error(err.response.data.message);
