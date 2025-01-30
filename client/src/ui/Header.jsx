@@ -8,7 +8,7 @@ function Header() {
       <NavLink path="/">
         <p>home</p>
       </NavLink>
-      <NavLink path="/">
+      <NavLink path="/favoriets">
         <p>favorites</p>
       </NavLink>
       <NavLink path="/login">

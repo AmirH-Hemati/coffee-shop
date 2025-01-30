@@ -6,10 +6,10 @@ function MenuMobile() {
       <NavLink path={`/`}>
         <Home2 size="32" color="#FF8A65" />
       </NavLink>
-      <NavLink path={`/`}>
+      <NavLink path={`/favoriets`}>
         <Heart size="32" color="#FF8A65" />
       </NavLink>
-      <NavLink path={`/`}>
+      <NavLink path={`/cart`}>
         <ShoppingCart size="32" color="#FF8A65" />
       </NavLink>
       <NavLink path={`/login`}>
