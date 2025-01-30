@@ -8,6 +8,5 @@ export function useProduct() {
     queryKey: ["product", id],
     queryFn: () => getProduct(id),
   });
-  console.log(product);
   return { product, isLoading };
 }

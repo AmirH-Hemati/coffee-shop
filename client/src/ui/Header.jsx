@@ -1,6 +1,8 @@
+import { useAddCart } from "../context/ShopingCart";
 import NavLink from "./NavLink";
-
+import { ShoppingCart } from "iconsax-react";
 function Header() {
+  const { getTotalQty } = useAddCart();
   return (
     <header className="w-full md:flex flex-row-reverse h-16 hidden border-b border-b-gray-600  items-center p-4 gap-5">
       <NavLink path="/">
@@ -13,7 +15,8 @@ function Header() {
         <p>login</p>
       </NavLink>
       <NavLink path="/" classNameStyle="absolute left-0 p-2">
-        <p>shop cart</p>
+        <p>{getTotalQty() > 0 && getTotalQty()}</p>
+        <ShoppingCart size="32" color="#FF8A65" />
       </NavLink>
     </header>
   );

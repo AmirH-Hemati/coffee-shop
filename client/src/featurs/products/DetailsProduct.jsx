@@ -1,6 +1,8 @@
+import { useAddCart } from "../../context/ShopingCart";
 import { useProduct } from "./useProduct";
 
 function DetailsProduct() {
+  const { handelIncreaseAddCart } = useAddCart();
   const { product } = useProduct();
   return (
     <div className="w-full  h-full md:flex items-center gap-2 md:p-2 ">
@@ -26,7 +28,10 @@ function DetailsProduct() {
             alias quam veniam unde nisi ratione dolorem illo suscipit assumenda
           </p>
         </div>
-        <button className="w-full p-2 bg-red-500 text-white rounded-lg mt-2 md:mt-0">
+        <button
+          className="w-full p-2 bg-red-500 text-white rounded-lg mt-2 md:mt-0"
+          onClick={() => handelIncreaseAddCart(product.data._id)}
+        >
           add to cart | 500%
         </button>
       </div>
