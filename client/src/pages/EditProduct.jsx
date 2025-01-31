@@ -8,41 +8,45 @@ function EditProduct() {
   const { products } = useProducts();
   const { removeProduct } = useRemoveProduct();
   return (
-    <ul className="bg-white w-full   flex flex-col gap-2 overflow-auto h-2/3 p-2">
-      <div className="grid grid-cols-5 w-full bg-red-300 p-2 gap-6">
-        <p>image</p>
-        <p>name</p>
-        <p>price</p>
-        <p>price</p>
-        <p></p>
-      </div>
-      {products?.data.map((p) => (
-        <div
-          key={p._id}
-          className="grid grid-cols-5 w-full bg-red-300 p-2 gap-6"
-        >
-          <img src={p.image} alt="" className="w-12 h-12 object-cover" />
-          <p className="truncate ">{p.name}</p>
-          <p>{p.price}</p>
-          <p>{p.price}</p>
-          <div className="flex items-center gap-4">
-            <Modal>
-              <Modal.Open openies="openEditModal">
-                <Edit size="32" color="#FF8A65" />
-              </Modal.Open>
-              <Modal.Window name={`openEditModal`}>
-                <EditProductForm p={p} />
-              </Modal.Window>
-            </Modal>
-            <Trash
-              size="32"
-              color="#FF8A65"
-              onClick={() => removeProduct(p._id)}
-            />
-          </div>
+    <div className="p-8 flex flex-col gap-6 h-full">
+      <h1 className=" text-3xl font-semibold">All Products</h1>
+      <ul className="bg-white w-full   flex flex-col  overflow-auto h-4/5    ">
+        <div className="font-semibold  grid grid-cols-5 w-full bg-[#F9FAFB]  gap-6 rounded-t-md p-4 border-2 border-black/10">
+          <p>image</p>
+          <p>name</p>
+          <p>price</p>
+          <p>price</p>
+          <p></p>
         </div>
-      ))}
-    </ul>
+        {products?.data.map((p) => (
+          <li
+            key={p._id}
+            className="grid grid-cols-5 w-full bg-white  px-4 py-6 gap-6 border-2 border-black/10"
+          >
+            <img src={p.image} alt="" className="w-20  object-cover" />
+            <p className="truncate flex items-center">{p.name}</p>
+            <p className="flex items-center">{p.price}</p>
+            <p className="flex items-center">{p.price}</p>
+            <div className="flex items-center gap-7">
+              <Modal>
+                <Modal.Open openies="openEditModal">
+                  <Edit size="32" color="#00512c" className="cursor-pointer" />
+                </Modal.Open>
+                <Modal.Window name={`openEditModal`}>
+                  <EditProductForm p={p} />
+                </Modal.Window>
+              </Modal>
+              <Trash
+                size="32"
+                color="#00512c"
+                onClick={() => removeProduct(p._id)}
+                className="cursor-pointer"
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
