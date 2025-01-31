@@ -1,3 +1,4 @@
+import { CloseSquare } from "iconsax-react";
 import { cloneElement, createContext, useContext, useState } from "react";
 
 const modalContext = createContext();
@@ -25,8 +26,13 @@ function Window({ children, name }) {
   if (name !== isOpen) return null;
   return (
     <div className="fixed top-0 left-0 bg-gray-700/70 w-full h-screen flex justify-center items-center [backdrop-filter:blur(10px)]">
-      <div className="w-1/2 h-1/2 bg-white">
-        <button onClick={close}>close</button>
+      <div className="w-[80%]  bg-white flex flex-col p-6 rounded-sm [box-shadow:2px_2px_10px_black)]">
+        <CloseSquare
+          size="32"
+          color="#00512c"
+          onClick={onclose}
+          className="self-end cursor-pointer"
+        />
         <div>{cloneElement(children, { onClose: close })}</div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormData from "../../ui/FormData";
+import FormLabel from "../../ui/FormLabel";
 import Input from "../../ui/Input";
 import { useAddProduct } from "./useAddProduct";
 import Button from "../../ui/Button";
@@ -15,19 +15,19 @@ function ProductForm() {
   }
   return (
     <form onSubmit={handelCreateProduct} className="flex flex-col  gap-4 ">
-      <FormData label="Name Product">
+      <FormLabel label="Name Product">
         <Input type="text" name="name" id="name" />
-      </FormData>
-      <FormData label="Price">
+      </FormLabel>
+      <FormLabel label="Price">
         <Input type="text" name="price" id="price" />
-      </FormData>
-      <FormData label="Description">
+      </FormLabel>
+      <FormLabel label="Description">
         <textarea
           name="description"
           id="description"
           className="outline-none w-1/2 text-black border-2 border-black/30 rounded-sm"
         ></textarea>
-      </FormData>
+      </FormLabel>
       <label
         htmlFor="file"
         className="w-full border-2 border-black/30 border-dotted h-28 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
