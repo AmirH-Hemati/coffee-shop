@@ -45,7 +45,7 @@ function ProductForm() {
         className="hidden"
         onChange={(e) => setPreview(URL.createObjectURL(e.target.files[0]))}
       />
-      <Button>create product</Button>
+      <Button type="submit">create product</Button>
     </form>
   );
 }

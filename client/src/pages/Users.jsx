@@ -1,4 +1,5 @@
 import { useAllUsers } from "../featurs/admin/useAllUsers";
+import Button from "../ui/Button";
 
 function Users() {
   const { users } = useAllUsers();
@@ -29,7 +30,7 @@ function Users() {
           </li>
         ))}
       </ul>
-      <button className="self-start bg-red-500 p-4 cursor-pointer text-white mt-5">Add New User</button>
+      <Button type="submit">Add New User</Button>
     </div>
   );
 }
