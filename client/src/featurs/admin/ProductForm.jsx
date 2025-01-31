@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormData from "../../ui/FormData";
 import Input from "../../ui/Input";
 import { useAddProduct } from "./useAddProduct";
+import Button from "../../ui/Button";
 
 function ProductForm() {
   const { addProduct } = useAddProduct();
@@ -44,13 +45,7 @@ function ProductForm() {
         className="hidden"
         onChange={(e) => setPreview(URL.createObjectURL(e.target.files[0]))}
       />
-      <button
-        type="submit"
-        className="bg-red-500 text-white p-2 cursor-pointer w-1/3 self-end"
-      >
-        {" "}
-        create product
-      </button>
+      <Button>create product</Button>
     </form>
   );
 }
