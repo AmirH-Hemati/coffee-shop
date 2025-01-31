@@ -21,11 +21,6 @@ export async function product(req, res) {
   res.json({ message: "ok", data: product });
 }
 
-export async function removeProduct(req, res) {
-  const { id } = req.params;
-  const result = await Products.deleteOne({ _id: id });
-  res.json({ message: "product seccssesfully removed", data: result });
-}
 export async function updateProduct(req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
@@ -44,4 +39,11 @@ export async function updateProduct(req, res) {
     new: true,
   });
   res.json({ message: "ok", data: updatedProduct });
+}
+
+export async function removeProduct(req, res) {
+  const { id } = req.params;
+  console.log("id", id);
+  const result = await Products.deleteOne({ _id: id });
+  res.json({ message: "product seccssesfully removed", data: result });
 }

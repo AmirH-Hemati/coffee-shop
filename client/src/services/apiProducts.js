@@ -30,3 +30,11 @@ export async function editProduct({ id, formData, token }) {
   );
   return data;
 }
+export async function removeProduct(id) {
+  const token = localStorage.getItem("token");
+  const { data } = await axios.delete(
+    `http://localhost:1111/api/products/product/${id}`,
+    { headers: { authorization: token } }
+  );
+  return data;
+}
