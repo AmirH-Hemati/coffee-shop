@@ -1,9 +1,10 @@
-function Input({ type, name, style }) {
+function Input({ type, name, style, id }) {
   return (
     <input
       type={type}
       name={name}
-      className={`outline-none  text-black border-2 border-black/30 rounded-sm p-2 ${style}`}
+      id={id}
+      className={`outline-none w-1/2 text-black border-2 border-black/30 rounded-sm p-2 ${style}`}
     />
   );
 }

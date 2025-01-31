@@ -10,15 +10,27 @@ function ProductForm() {
     addProduct(formData);
   }
   return (
-    <form onSubmit={handelCreateProduct} className="flex flex-col p-2 ">
+    <form onSubmit={handelCreateProduct} className="flex flex-col p-2 gap-4 ">
       <FormData label="Name Product">
-        <Input type="text" name="name" />
+        <Input type="text" name="name" id="name" />
       </FormData>
       <FormData label="Price">
-        <Input type="text" name="price" />
+        <Input type="text" name="price" id="price" />
       </FormData>
-
-      <input type="file" name="file" className="p-2 " />
+      <FormData label="Description">
+        <textarea
+          name="description"
+          id="description"
+          className="outline-none w-1/2 text-black border-2 border-black/30 rounded-sm"
+        ></textarea>
+      </FormData>
+      <label
+        htmlFor="file"
+        className="w-full border-2 border-black/30 border-dotted h-16 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
+      >
+        +
+      </label>
+      <input type="file" id="file" name="file" className="hidden" />
       <button
         type="submit"
         className="bg-red-500 text-white p-2 cursor-pointer"
