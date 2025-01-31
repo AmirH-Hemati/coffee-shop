@@ -8,7 +8,7 @@ function EditProduct() {
   const { products } = useProducts();
   const { removeProduct } = useRemoveProduct();
   return (
-    <li className="bg-white w-full   flex flex-col gap-2 overflow-auto h-2/3 p-2">
+    <ul className="bg-white w-full   flex flex-col gap-2 overflow-auto h-2/3 p-2">
       <div className="grid grid-cols-5 w-full bg-red-300 p-2 gap-6">
         <p>image</p>
         <p>name</p>
@@ -42,7 +42,7 @@ function EditProduct() {
           </div>
         </div>
       ))}
-    </li>
+    </ul>
   );
 }
 
