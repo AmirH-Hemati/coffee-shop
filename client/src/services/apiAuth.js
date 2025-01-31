@@ -18,3 +18,10 @@ export async function register({ email, password, userName }) {
   );
   return data;
 }
+export async function getUsers() {
+  const token = localStorage.getItem("token");
+  const { data } = await axios.get("http://localhost:1111/api/users/users", {
+    headers: { authorization: token },
+  });
+  return data;
+}
