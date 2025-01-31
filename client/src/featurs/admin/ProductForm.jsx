@@ -1,7 +1,8 @@
+import FormData from "../../ui/FormData";
+import Input from "../../ui/Input";
 import { useAddProduct } from "./useAddProduct";
 
 function ProductForm() {
-
   const { addProduct } = useAddProduct();
   function handelCreateProduct(e) {
     e.preventDefault();
@@ -10,18 +11,13 @@ function ProductForm() {
   }
   return (
     <form onSubmit={handelCreateProduct} className="flex flex-col p-2 ">
-      <input
-        type="text"
-        placeholder="enter name product ..."
-        name="name"
-        className="p-2 "
-      />
-      <input
-        type="text"
-        placeholder="enter price"
-        name="price"
-        className="p-2 "
-      />
+      <FormData label="Name Product">
+        <Input type="text" name="name" />
+      </FormData>
+      <FormData label="Price">
+        <Input type="text" name="price" />
+      </FormData>
+
       <input type="file" name="file" className="p-2 " />
       <button
         type="submit"
