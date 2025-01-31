@@ -10,7 +10,7 @@ function ProductForm() {
     addProduct(formData);
   }
   return (
-    <form onSubmit={handelCreateProduct} className="flex flex-col p-2 gap-4 ">
+    <form onSubmit={handelCreateProduct} className="flex flex-col  gap-4 ">
       <FormData label="Name Product">
         <Input type="text" name="name" id="name" />
       </FormData>
@@ -33,7 +33,7 @@ function ProductForm() {
       <input type="file" id="file" name="file" className="hidden" />
       <button
         type="submit"
-        className="bg-red-500 text-white p-2 cursor-pointer"
+        className="bg-red-500 text-white p-2 cursor-pointer w-1/3 self-end"
       >
         {" "}
         create product
