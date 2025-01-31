@@ -10,14 +10,14 @@ function EditProduct() {
   return (
     <div className="p-8 flex flex-col gap-6 h-full">
       <h1 className=" text-3xl font-semibold">All Products</h1>
+      <div className="font-semibold mt-8 grid grid-cols-5 w-full bg-[#F9FAFB]  gap-6 rounded-t-md p-4 border-2 border-black/10">
+        <p>image</p>
+        <p>name</p>
+        <p>price</p>
+        <p>price</p>
+        <p></p>
+      </div>
       <ul className="bg-white w-full   flex flex-col  overflow-auto h-4/5    ">
-        <div className="font-semibold  grid grid-cols-5 w-full bg-[#F9FAFB]  gap-6 rounded-t-md p-4 border-2 border-black/10">
-          <p>image</p>
-          <p>name</p>
-          <p>price</p>
-          <p>price</p>
-          <p></p>
-        </div>
         {products?.data.map((p) => (
           <li
             key={p._id}
