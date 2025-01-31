@@ -27,7 +27,7 @@ export async function removeProduct(req, res) {
   res.json({ message: "product seccssesfully removed", data: result });
 }
 export async function updateProduct(req, res) {
-  const { id } = rq.params;
+  const { id } = req.params;
   const { name, price } = req.body;
   const updateProduct = { name, price };
   const product = await Products.findById(id);

@@ -7,9 +7,10 @@ export function useAddProduct() {
   const queryClient = useQueryClient();
   const { mutate: addProduct, isLoading } = useMutation({
     mutationFn: (formData) => addProductAPI(formData, token),
-    onSuccess: (product) => {
-      console.log(product);
-      queryClient.setQueriesData(["product", product]);
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["products"],
+      });
       toast.success("seccssessfully created product");
     },
     onError: (err) => {

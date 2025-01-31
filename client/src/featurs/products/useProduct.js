@@ -5,7 +5,7 @@ import { getProduct } from "../../services/apiProducts";
 export function useProduct() {
   const { id } = useParams();
   const { data: product, isLoading } = useQuery({
-    queryKey: ["product", id],
+    queryKey: ["product"],
     queryFn: () => getProduct(id),
   });
   return { product, isLoading };

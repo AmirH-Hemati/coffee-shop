@@ -22,3 +22,11 @@ export async function addProduct(productData, token) {
   );
   return data;
 }
+export async function editProduct({ id, formData, token }) {
+  const { data } = await axios.put(
+    `http://localhost:1111/api/products/product/${id}`,
+    formData,
+    { headers: { authorization: token } }
+  );
+  return data;
+}
