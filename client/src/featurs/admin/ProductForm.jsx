@@ -1,9 +1,12 @@
+import { useState } from "react";
 import FormData from "../../ui/FormData";
 import Input from "../../ui/Input";
 import { useAddProduct } from "./useAddProduct";
 
 function ProductForm() {
   const { addProduct } = useAddProduct();
+  const [preview, setPreview] = useState("");
+  console.log(preview);
   function handelCreateProduct(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -26,11 +29,21 @@ function ProductForm() {
       </FormData>
       <label
         htmlFor="file"
-        className="w-full border-2 border-black/30 border-dotted h-16 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
+        className="w-full border-2 border-black/30 border-dotted h-28 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
       >
-        +
+        {preview ? (
+          <img src={preview} className="w-full object-cover h-full" />
+        ) : (
+          <p>+</p>
+        )}
       </label>
-      <input type="file" id="file" name="file" className="hidden" />
+      <input
+        type="file"
+        id="file"
+        name="file"
+        className="hidden"
+        onChange={(e) => setPreview(URL.createObjectURL(e.target.files[0]))}
+      />
       <button
         type="submit"
         className="bg-red-500 text-white p-2 cursor-pointer w-1/3 self-end"
