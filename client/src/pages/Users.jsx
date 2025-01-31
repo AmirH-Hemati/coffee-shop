@@ -21,7 +21,7 @@ function Users() {
             <img
               src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
               alt=""
-              className="w-20 object-cover"
+              className="w-10 object-cover"
             />
             <p className="flex items-center">{user?.userName}</p>
             <p className="flex items-center">{user?.email}</p>
@@ -29,6 +29,7 @@ function Users() {
           </li>
         ))}
       </ul>
+      <button className="self-start bg-red-500 p-4 cursor-pointer text-white mt-5">Add New User</button>
     </div>
   );
 }
