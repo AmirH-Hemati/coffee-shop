@@ -37,3 +37,8 @@ export async function login(req, res) {
   );
   res.json({ message: "ok", data: token });
 }
+
+export async function allUsers(req, res) {
+  const users = await User.find({});
+  res.json({ message: "ok", data: users });
+}
