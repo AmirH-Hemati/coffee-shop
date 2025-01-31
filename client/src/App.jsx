@@ -14,6 +14,7 @@ import ProtectedAdmin from "./ui/ProtectedAdmin";
 import LayoutAdminPage from "./ui/LayoutAdminPage";
 import Dashboard from "./pages/Dashboard";
 import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -33,6 +34,7 @@ function App() {
                 <Route element={<LayoutAdminPage />}>
                   <Route path="/adminDashboard" element={<Dashboard />} />
                   <Route path="/addProduct" element={<AddProduct />} />
+                  <Route path="/edit" element={<EditProduct />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />

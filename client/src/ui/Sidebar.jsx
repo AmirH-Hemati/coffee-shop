@@ -15,6 +15,9 @@ function Sidebar() {
       <NavLink to={`/adminDashboard`}>
         <p>users</p>
       </NavLink>
+      <NavLink to={`/edit`}>
+        <p>edit product</p>
+      </NavLink>
     </div>
   );
 }
