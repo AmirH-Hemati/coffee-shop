@@ -23,9 +23,9 @@ function Users() {
               alt=""
               className="w-20 object-cover"
             />
-            <p>{user?.userName}</p>
-            <p>{user?.email}</p>
-            <p>{user?._id}</p>
+            <p className="flex items-center">{user?.userName}</p>
+            <p className="flex items-center">{user?.email}</p>
+            <p className="flex items-center">{user?._id}</p>
           </li>
         ))}
       </ul>
