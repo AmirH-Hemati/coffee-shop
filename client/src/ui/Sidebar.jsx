@@ -7,7 +7,7 @@ function Sidebar() {
         <p>dashboard</p>
       </NavLink>
       <NavLink to={`/addProduct`}>
-        <p> products</p>
+        <p> Add Product</p>
       </NavLink>
       <NavLink to={`/adminDashboard`}>
         <p>orders</p>
@@ -16,7 +16,7 @@ function Sidebar() {
         <p>users</p>
       </NavLink>
       <NavLink to={`/edit`}>
-        <p>Product</p>
+        <p>Products</p>
       </NavLink>
     </div>
   );
