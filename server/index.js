@@ -1,10 +1,10 @@
 import express from "express";
 import mongoose, { mongo } from "mongoose";
 import cors from "cors";
-import usersRouter from "./routes/users.js";
+import usersRouter from "./routes/auth.js";
 import productsRouter from "./routes/products.js";
 import bcy, { genSalt } from "bcrypt";
-import User from "./models/users.js";
+import User from "./models/auth.js";
 mongoose
   .connect("mongodb://localhost:27017/coffee-shop")
   .then(() => {

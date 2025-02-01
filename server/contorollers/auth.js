@@ -1,4 +1,4 @@
-import User from "../models/users.js";
+import User from "../models/auth.js";
 import bcy from "bcrypt";
 import jwt from "jsonwebtoken";
 export async function register(req, res) {

@@ -1,5 +1,5 @@
 import express from "express";
-import { allUsers, login, register } from "../contorollers/users.js";
+import { allUsers, login, register } from "../contorollers/auth.js";
 import { auth } from "../middelware/auth.js";
 import { admin } from "../middelware/admin.js";
 const router = express.Router();
