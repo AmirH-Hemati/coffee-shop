@@ -1,7 +1,7 @@
 import { useAddCart } from "../../context/ShopingContext";
 import ButtonAddCart from "../../ui/ButtonAddCart";
 import { useProduct } from "./useProduct";
-
+import Button from "../../ui/Button";
 function DetailsProduct() {
   const { handelIncreaseAddCart, getQty } = useAddCart();
   const { product } = useProduct();
@@ -33,12 +33,13 @@ function DetailsProduct() {
         {getQty(product?.data._id) > 0 ? (
           <ButtonAddCart id={product?.data._id} />
         ) : (
-          <button
-            className="w-full p-2 bg-red-500 text-white rounded-lg mt-2 md:mt-0"
+          <Button
+            typeButton="large"
+            style={`self-end`}
             onClick={() => handelIncreaseAddCart(product.data._id)}
           >
-            add to cart | 500%
-          </button>
+            add to cart | 500%{" "}
+          </Button>
         )}
       </div>
     </div>

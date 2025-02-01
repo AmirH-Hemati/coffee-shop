@@ -1,5 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 import { useAddCart } from "../context/ShopingContext";
+import Button from "./Button";
 import NavLink from "./NavLink";
 import { ShoppingCart } from "iconsax-react";
 function Header() {
@@ -21,9 +22,9 @@ function Header() {
           <p>panelAdmin</p>
         </NavLink>
       )}
-      <NavLink path="/cart" classNameStyle="absolute left-0 p-2">
-        <p>{getTotalQty() > 0 && getTotalQty()}</p>
-        <ShoppingCart size="32" color="#FF8A65" />
+      <NavLink path="/cart" classNameStyle="absolute left-0 p-2 ">
+        {getTotalQty() > 0 && <Button style={`absolute left-1 -top-1`} typeButton="circleButton">{getTotalQty()}</Button>}
+        <ShoppingCart size="32" color="black" />
       </NavLink>
     </header>
   );

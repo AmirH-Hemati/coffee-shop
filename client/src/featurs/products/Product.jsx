@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../../ui/Button";
 
 function Product({ product }) {
   return (
@@ -14,9 +15,7 @@ function Product({ product }) {
         <h3 className="font-bold text-xl truncate">{product.name}</h3>
         <div className="flex w-full justify-between w-full items-center">
           <p>{product.price}$</p>
-          <button className="bg-[#00512C] rounded-full  w-8 h-8 text-base font-semibold flex items-center justify-center text-white">
-            +
-          </button>
+          <Button typeButton="circleButton">+</Button>
         </div>
       </li>
     </Link>
