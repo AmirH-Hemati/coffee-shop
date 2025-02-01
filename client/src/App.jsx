@@ -16,33 +16,36 @@ import Dashboard from "./pages/Dashboard";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import Users from "./pages/Users";
+import { FavoriteContextProvider } from "./context/FavoriteContext";
 function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
-        <ShopingCartProvider>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="/products/:id" element={<ProductPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route element={<ProtectedRout />}>
-                <Route path="/cart" element={<ShopingCart />} />
-                <Route path="/favoriets" element={<Favorites />} />
-              </Route>
-              <Route element={<ProtectedAdmin />}>
-                <Route element={<LayoutAdminPage />}>
-                  <Route path="/adminDashboard" element={<Dashboard />} />
-                  <Route path="/addProduct" element={<AddProduct />} />
-                  <Route path="/edit" element={<EditProduct />} />
-                  <Route path="/users" element={<Users />} />
+        <FavoriteContextProvider>
+          <ShopingCartProvider>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="/products/:id" element={<ProductPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route element={<ProtectedRout />}>
+                  <Route path="/cart" element={<ShopingCart />} />
+                  <Route path="/favoriets" element={<Favorites />} />
                 </Route>
+                <Route element={<ProtectedAdmin />}>
+                  <Route element={<LayoutAdminPage />}>
+                    <Route path="/adminDashboard" element={<Dashboard />} />
+                    <Route path="/addProduct" element={<AddProduct />} />
+                    <Route path="/edit" element={<EditProduct />} />
+                    <Route path="/users" element={<Users />} />
+                  </Route>
+                </Route>
+                <Route path="*" element={<NotFound />} />
               </Route>
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </ShopingCartProvider>
+            </Routes>
+          </ShopingCartProvider>
+        </FavoriteContextProvider>
       </AuthContextProvider>
     </QueryClientProvider>
   );

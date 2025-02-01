@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { toast } from "react-toastify";
 const authContext = createContext();
 function AuthContextProvider({ children }) {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
