@@ -6,11 +6,11 @@ export async function products(req, res) {
 }
 
 export async function addProduct(req, res) {
-  const { name, price } = req.body;
+  const { name, price } = req?.body;
   const product = await Products.create({
     name,
     price,
-    image: `http://localhost:1111/${req.file.filename}`,
+    image: `http://localhost:1111/${req?.file?.filename}`,
   });
   res.json({ message: "ok", data: product });
 }

@@ -6,7 +6,7 @@ function Product({ product }) {
       <li className="flex flex-col  h-full [box-shadow:2px_2px_2px_rgba(0,0,0,0.1)]   rounded-xl p-2 cursor-pointer">
         <div className="">
           <img
-          src={product.image}
+            src={product.image}
             alt={product.name}
             className="w-full rounded-xl"
           />
@@ -14,7 +14,7 @@ function Product({ product }) {
         <h3 className="font-bold text-xl truncate">{product.name}</h3>
         <div className="flex w-full justify-between w-full items-center">
           <p>{product.price}$</p>
-          <button className="bg-red-500 rounded-full  w-10 h-10 text-2xl flex items-center justify-center text-white">
+          <button className="bg-[#00512C] rounded-full  w-8 h-8 text-base font-semibold flex items-center justify-center text-white">
             +
           </button>
         </div>
