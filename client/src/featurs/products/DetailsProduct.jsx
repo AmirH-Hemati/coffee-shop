@@ -2,6 +2,7 @@ import { useAddCart } from "../../context/ShopingContext";
 import ButtonAddCart from "../../ui/ButtonAddCart";
 import { useProduct } from "./useProduct";
 import Button from "../../ui/Button";
+import { Star1 } from "iconsax-react";
 function DetailsProduct() {
   const { handelIncreaseAddCart, getQty } = useAddCart();
   const { product } = useProduct();
@@ -16,9 +17,14 @@ function DetailsProduct() {
         />
       </div>
       <div className="relative   p-4 md: md:px-2 w-full md:w-1/2 h-1/2 bg-white flex flex-col justify-between  -mt-5 md:-mt-0 z-50 rounded-t-3xl md:rounded-lg md:[box-shadow:0_0_5px_black]">
-        <div>
-          <h3>{product?.data?.name}</h3>
-          <h3>{product?.data?.rating}</h3>
+        <div className="flex justify-between items-center">
+          <h3 className="text-2xl font-semibold ">{product?.data?.name}</h3>
+          <p className="bg-[#c1925b] text-base font-semibold flex items-center justify-center text-white px-3 py-0.5 gap-1 rounded-2xl ">
+            <span>
+              <Star1 size="23" color="#fff" variant="Bold" />
+            </span>
+            <span>{product?.data?.rating}</span>
+          </p>
         </div>
         <div>
           <p>cup size</p>
