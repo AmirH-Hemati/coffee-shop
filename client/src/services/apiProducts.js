@@ -38,3 +38,10 @@ export async function removeProduct(id) {
   );
   return data;
 }
+export async function getProductDetails(items) {
+  const { data } = await axios.post(
+    "http://localhost:1111/api/products/details",
+    items
+  );
+  return data;
+}

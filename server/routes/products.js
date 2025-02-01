@@ -2,6 +2,7 @@ import express from "express";
 import multer from "multer";
 import {
   addProduct,
+  detailsProducts,
   product,
   products,
   removeProduct,
@@ -26,4 +27,5 @@ router.get("/products/:id", product);
 router.post("/addProduct", auth, admin, upload.single("file"), addProduct);
 router.put("/product/:id", auth, admin, upload.single("file"), updateProduct);
 router.delete("/product/:id", auth, admin, removeProduct);
+router.post("/details", detailsProducts);
 export default router;

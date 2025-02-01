@@ -1,9 +1,7 @@
 function ShopingCart() {
-    return (
-        <div>
-            shopcing cart
-        </div>
-    )
+  return <div>
+    sadwq
+  </div>;
 }
 
-export default ShopingCart
+export default ShopingCart;
