@@ -30,8 +30,8 @@ function DetailsProduct() {
           <p>cup size</p>
         </div>
         <div>
-          <p>about</p>
-          <p>
+          <p className="font-semibold text-base md:text-lg ">About</p>
+          <p className=" text-sm md:text-base text-gray-700">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat in
             alias quam veniam unde nisi ratione dolorem illo suscipit assumenda
           </p>
