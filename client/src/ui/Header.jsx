@@ -5,6 +5,7 @@ import Button from "./Button";
 import NavLink from "./NavLink";
 import { ShoppingCart, UserSquare } from "iconsax-react";
 import { useUser } from "../featurs/authorizaion/useUser";
+import { Link } from "react-router-dom";
 function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
@@ -63,13 +64,11 @@ function User({ setFirst, first }) {
         </p>
       </div>
       <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Your Favorites</p>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Change Profile</p>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
-        Change Password
-      </p>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
-        Change Password
-      </p>
+      <Link to={`/setting`}>
+        <p className="cursor-pointer bg-red-200 p-2 rounded-sm">setting</p>
+      </Link>
+
+      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Sign Out</p>
     </div>
   );
 }

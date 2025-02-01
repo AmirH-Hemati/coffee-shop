@@ -17,6 +17,7 @@ import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import Users from "./pages/Users";
 import { FavoriteContextProvider } from "./context/FavoriteContext";
+import Setting from "./pages/Setting";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -32,6 +33,7 @@ function App() {
                 <Route element={<ProtectedRout />}>
                   <Route path="/cart" element={<ShopingCart />} />
                   <Route path="/favoriets" element={<Favorites />} />
+                  <Route path="/setting" element={<Setting />} />
                 </Route>
                 <Route element={<ProtectedAdmin />}>
                   <Route element={<LayoutAdminPage />}>
