@@ -7,9 +7,9 @@ function Register() {
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   function handelLogin(e) {
-      e.preventDefault();
+    e.preventDefault();
     if (!email || !password || !userName) return;
-    register({ email, password });
+    register({ email, password, userName });
   }
   return (
     <form

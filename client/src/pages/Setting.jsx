@@ -46,7 +46,7 @@ function Setting() {
         className="w-[90%] flex flex-col gap-6"
         onSubmit={handelChangeProfile}
       >
-        <FormLabel label={`Full Name`}>
+        <FormLabel label={`User Name`}>
           <Input
             type={`text`}
             value={userName}
