@@ -32,7 +32,7 @@ function ShopingCartProvider({ children }) {
   function getTotalQty() {
     return addCart.reduce((sum, item) => sum + item.qty, 0);
   }
-  console.log(addCart);
+
   return (
     <shopingCartContext.Provider
       value={{
