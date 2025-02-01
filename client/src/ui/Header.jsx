@@ -50,7 +50,6 @@ function Header() {
 
 function User({ setFirst, first }) {
   const { user } = useUser();
-  console.log(user);
   return (
     <div
       className={`flex flex-col gap-8 bg-red-100 p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
