@@ -3,6 +3,7 @@ import mongoose, { mongo } from "mongoose";
 import cors from "cors";
 import usersRouter from "./routes/auth.js";
 import productsRouter from "./routes/products.js";
+import userRouter from "./routes/user.js";
 import bcy, { genSalt } from "bcrypt";
 import User from "./models/auth.js";
 mongoose
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.static("images"));
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
+app.use("/user", userRouter);
 app.listen(1111, () => {
   console.log("listen on port 1111");
 });
