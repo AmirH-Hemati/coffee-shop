@@ -4,6 +4,7 @@ import { useAddCart } from "../context/ShopingContext";
 import Button from "./Button";
 import NavLink from "./NavLink";
 import { ShoppingCart, UserSquare } from "iconsax-react";
+import { useUser } from "../featurs/authorizaion/useUser";
 function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
@@ -47,6 +48,8 @@ function Header() {
 }
 
 function User({ setFirst, first }) {
+  const { user } = useUser();
+  console.log(user);
   return (
     <div
       className={`flex flex-col gap-8 bg-red-100 p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
@@ -54,15 +57,19 @@ function User({ setFirst, first }) {
       } `}
     >
       <div className="flex w-full justify-between items-center">
-        <p>hellow</p>
+        <p>{user?.data?.userName}</p>
         <p onClick={() => setFirst(false)} className="cursor-pointer">
           x
         </p>
       </div>
       <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Your Favorites</p>
       <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Change Profile</p>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Change Password</p>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Change Password</p>
+      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
+        Change Password
+      </p>
+      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
+        Change Password
+      </p>
     </div>
   );
 }
