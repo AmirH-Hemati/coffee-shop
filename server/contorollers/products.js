@@ -49,7 +49,8 @@ export async function removeProduct(req, res) {
 }
 export async function detailsProducts(req, res) {
   const { items } = req.body;
-  const productIds = items.map((item) => item.id);
+  console.log(req.body);
+  const productIds = items?.map((item) => item.id);
   const products = await Products.find({ _id: { $in: productIds } });
   const enrichedProducts = products.map((product) => {
     const item = items.find((i) => i.id === product._id.toString());
