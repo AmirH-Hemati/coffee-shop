@@ -1,7 +1,8 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { useLocalStorage } from "../utilis/useLocalStorage";
 const shopingCartContext = createContext();
 function ShopingCartProvider({ children }) {
-  const [addCart, setAddCart] = useState([]);
+  const [addCart, setAddCart] = useLocalStorage("shopCart", []);
   function handelIncreaseAddCart(id) {
     setAddCart((products) => {
       if (products.find((item) => item.id == id)) {
