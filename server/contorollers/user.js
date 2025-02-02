@@ -6,7 +6,7 @@ export async function me(req, res) {
 export async function editProfile(req, res) {
   const { id } = req.user;
   const { email, userName } = req.body;
-  console.log(req.body);
+  console.log(req.file);
   const updatedProfile = { email, userName };
   const user = await User.findOne({ _id: id });
   if (!user) {

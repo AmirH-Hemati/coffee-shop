@@ -12,6 +12,7 @@ function Setting() {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [image, setImage] = useState("");
+  const [file, setFile] = useState("");
   useEffect(() => {
     if (user?.data) {
       setEmail(user?.data?.email);
@@ -23,8 +24,8 @@ function Setting() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("userName", userName);
-    formData.append("emial", email);
-    formData.append("avatar", image);
+    formData.append("email", email);
+    formData.append("file", file);
     editProfile(formData);
     // call to api and send form data and rechange data
   }
@@ -57,6 +58,7 @@ function Setting() {
           <Input
             type={`text`}
             value={userName}
+            name={`userName`}
             onChange={(e) => setUserName(e.target.value)}
           />
         </FormLabel>
@@ -64,6 +66,7 @@ function Setting() {
           <Input
             type={`text`}
             value={email}
+            name={`email`}
             onChange={(e) => setEmail(e.target.value)}
           />
         </FormLabel>
@@ -83,9 +86,13 @@ function Setting() {
 
           <input
             type="file"
+            name="file"
             id="file"
             className="hidden"
-            onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
+            onChange={(e) => {
+              setImage(URL.createObjectURL(e.target.files[0]));
+              setFile(e.target.files[0]);
+            }}
           />
         </div>
         <Button typeButton={`large`} style={`self-end`}>
