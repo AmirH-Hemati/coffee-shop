@@ -66,7 +66,7 @@ function User({ setFirst, first }) {
       <Link to={`/setting`}>
         <p className="cursor-pointer bg-red-200 p-2 rounded-sm">setting</p>
       </Link>
-      <Link to={`/setting`}>
+      <Link to={`/changePassword`}>
         <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
           change password
         </p>
