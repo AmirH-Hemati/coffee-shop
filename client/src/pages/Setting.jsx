@@ -27,6 +27,9 @@ function Setting() {
     formData.append("email", email);
     formData.append("file", file);
     editProfile(formData);
+    setEmail("");
+    setUserName("");
+    setImage("");
     // call to api and send form data and rechange data
   }
   return (
