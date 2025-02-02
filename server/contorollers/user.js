@@ -4,9 +4,9 @@ export async function me(req, res) {
   res.json({ message: "ok", data: user });
 }
 export async function editProfile(req, res) {
-  console.log(req.user);
   const { id } = req.user;
   const { email, userName } = req.body;
+  console.log(req.body);
   const updatedProfile = { email, userName };
   const user = await User.findOne({ _id: id });
   if (!user) {
