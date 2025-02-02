@@ -19,3 +19,13 @@ export async function register({ email, password, userName }) {
   );
   return data;
 }
+
+export async function changePassword({ email, password, newPassword }) {
+  const token = localStorage.getItem("token");
+  const { data } = await axios.put(
+    "http://localhost:1111/api/users/changePassword",
+    { email, password, newPassword },
+    { headers: { authorization: token } }
+  );
+  return data;
+}
