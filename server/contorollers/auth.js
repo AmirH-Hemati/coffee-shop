@@ -38,6 +38,27 @@ export async function login(req, res) {
   res.json({ message: "ok", data: token });
 }
 
+export async function changePassword(req, res) {
+  const { email, password, newPassword } = req.body;
+  const user = await User.findOne({ email });
+  if (!user) {
+    return res.status(404).json({ message: "user Nout Found", data: {} });
+  }
+  const inValid = await bcy.compare(password, user.password);
+  if (!inValid) {
+    return res
+      .status(400)
+      .json({ message: "email or password inValid", data: {} });
+  }
+  const salt = await bcy.genSalt(12);
+  const hashedNewPassword = await bcy.hash(newPassword, salt);
+  const reslut = await User.findByIdAndUpdate(
+    { _id: user._id },
+    { password: hashedNewPassword },
+    { new: true }
+  );
+  res.json({ message: "ok", data: reslut });
+}
 export async function allUsers(req, res) {
   const users = await User.find({});
   res.json({ message: "ok", data: users });
