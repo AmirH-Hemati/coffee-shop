@@ -4,7 +4,7 @@ import MenuMobile from "./MenuMobile";
 
 function Layout() {
   return (
-    <div className="flex flex-col h-screen w-full">
+    <div className="flex flex-col h-screen w-full overflow-hidden">
       <Header />
     <MenuMobile />
       <main className=" flex-1 ">
