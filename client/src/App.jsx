@@ -18,6 +18,7 @@ import EditProduct from "./pages/EditProduct";
 import Users from "./pages/Users";
 import { FavoriteContextProvider } from "./context/FavoriteContext";
 import Setting from "./pages/Setting";
+import ChangePassword from "./pages/ChangePassword";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/cart" element={<ShopingCart />} />
                   <Route path="/favoriets" element={<Favorites />} />
                   <Route path="/setting" element={<Setting />} />
+                  <Route path="/changePassword" element={<ChangePassword />} />
                 </Route>
                 <Route element={<ProtectedAdmin />}>
                   <Route element={<LayoutAdminPage />}>

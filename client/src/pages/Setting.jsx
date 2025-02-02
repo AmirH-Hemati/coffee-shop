@@ -22,6 +22,7 @@ function Setting() {
 
   function handelChangeProfile(e) {
     e.preventDefault();
+    if (email === "" || userName === "") return;
     const formData = new FormData();
     formData.append("userName", userName);
     formData.append("email", email);
