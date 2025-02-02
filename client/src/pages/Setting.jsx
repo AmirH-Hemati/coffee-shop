@@ -4,10 +4,11 @@ import FormLabel from "../ui/FormLabel";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useEffect, useState } from "react";
+import { useEditProfile } from "../featurs/user/useEditFrofile";
 
 function Setting() {
   const { user } = useUser();
-  console.log(user);
+  const { editProfile } = useEditProfile();
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [image, setImage] = useState("");
@@ -24,7 +25,8 @@ function Setting() {
     formData.append("userName", userName);
     formData.append("emial", email);
     formData.append("avatar", image);
-    // call to api and send form data and rechange data   
+    editProfile(formData);
+    // call to api and send form data and rechange data
   }
   return (
     <div className="w-full bg-red-500 h-full flex flex-col items-center p-8">

@@ -14,4 +14,12 @@ export async function getUser() {
   });
   return data;
 }
-export async function editProfile(formData) {}
+export async function editProfile(formData) {
+  const token = localStorage.getItem("token");
+  const { data } = await axios.put(
+    "http://localhost:1111/api/user/me/edit",
+    formData,
+    { headers: { authorization: token } }
+  );
+  return data;
+}
