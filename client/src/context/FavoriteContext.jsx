@@ -5,8 +5,8 @@ function FavoriteContextProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
   function addToFavorites(product) {
     setFavorites((favoriets) =>
-      favoriets.find((f) => f.id == product.id)
-        ? favoriets.filter((fa) => fa.id !== product.id)
+      favoriets.find((f) => f._id == product._id)
+        ? favoriets.filter((fa) => fa._id !== product._id)
         : [...favoriets, product]
     );
   }

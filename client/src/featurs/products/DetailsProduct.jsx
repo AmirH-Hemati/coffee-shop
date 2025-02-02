@@ -24,7 +24,7 @@ function DetailsProduct() {
       </div>
       <div className="relative gap-3 md:gap-6   p-4 md: md:px-2 w-full md:w-1/2  bg-white flex flex-col justify-between  -mt-5 md:-mt-0 z-50 rounded-t-3xl md:rounded-lg md:[box-shadow:0_0_5px_black]">
         <div className="self-end hidden md:block">
-          <AddToFavorite product={product} />
+          <AddToFavorite product={product?.data} />
         </div>
         <div className="hidden md:flex justify-between items-center ">
           <h3 className="md:text-3xl text-xl font-semibold ">

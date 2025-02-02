@@ -7,7 +7,7 @@ function AddToFavorite({ product }) {
     <Heart
       size={32}
       color="red"
-      variant={favorites.find((f) => f.id == product?.id) ? "Bold" : null}
+      variant={favorites.find((f) => f._id == product?._id) ? "Bold" : null}
       onClick={() => addToFavorites(product)}
     />
   );

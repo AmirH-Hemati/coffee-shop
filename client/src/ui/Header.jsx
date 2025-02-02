@@ -62,7 +62,12 @@ function User({ setFirst, first }) {
           x
         </p>
       </div>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Your Favorites</p>
+      <Link to={`/favoriets`}>
+        <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
+          Your Favorites
+        </p>
+      </Link>
+
       <Link to={`/setting`}>
         <p className="cursor-pointer bg-red-200 p-2 rounded-sm">setting</p>
       </Link>

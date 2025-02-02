@@ -3,9 +3,14 @@ export async function me(req, res) {
   const user = req.user;
   res.json({ message: "ok", data: user });
 }
+
 export async function editProfile(req, res) {
   const { id } = req.user;
   const { email, userName } = req.body;
+  const userExist = await User.findOne({ email });
+  if (userExist) {
+    return res.status(400).json({ message: "email Already Exist", data: {} });
+  }
   const updatedProfile = { email, userName };
   const user = await User.findOne({ _id: id });
   if (!user) {
