@@ -4,6 +4,6 @@ import { auth } from "../middelware/auth.js";
 
 const router = express.Router();
 router.get("/me", auth, me);
-router.put("/me/edit", auth, editProfile);
+router.put("/edit", auth, editProfile);
 
 export default router;

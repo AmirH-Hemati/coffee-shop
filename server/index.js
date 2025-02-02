@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.static("images"));
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
-app.use("/user", userRouter);
+app.use("/api/user", userRouter);
 app.listen(1111, () => {
   console.log("listen on port 1111");
 });

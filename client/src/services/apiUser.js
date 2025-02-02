@@ -9,7 +9,7 @@ export async function getUsers() {
 }
 export async function getUser() {
   const token = localStorage.getItem("token");
-  const { data } = await axios.get("http://localhost:1111/user/me", {
+  const { data } = await axios.get("http://localhost:1111/api/user/me", {
     headers: { authorization: token },
   });
   return data;
@@ -17,7 +17,7 @@ export async function getUser() {
 export async function editProfile(formData) {
   const token = localStorage.getItem("token");
   const { data } = await axios.put(
-    "http://localhost:1111/api/user/me/edit",
+    "http://localhost:1111/api/user/edit",
     formData,
     { headers: { authorization: token } }
   );
