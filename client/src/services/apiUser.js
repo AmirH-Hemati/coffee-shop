@@ -14,3 +14,4 @@ export async function getUser() {
   });
   return data;
 }
+export async function editProfile(formData) {}

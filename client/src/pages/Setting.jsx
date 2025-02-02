@@ -20,6 +20,11 @@ function Setting() {
 
   function handelChangeProfile(e) {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("userName", userName);
+    formData.append("emial", email);
+    formData.append("avatar", image);
+    // call to api and send form data and rechange data   
   }
   return (
     <div className="w-full bg-red-500 h-full flex flex-col items-center p-8">
