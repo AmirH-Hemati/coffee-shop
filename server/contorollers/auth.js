@@ -40,6 +40,7 @@ export async function login(req, res) {
 
 export async function changePassword(req, res) {
   const { email, password, newPassword } = req.body;
+  console.log({ email, password, newPassword });
   const user = await User.findOne({ email });
   if (!user) {
     return res.status(404).json({ message: "user Nout Found", data: {} });
@@ -52,8 +53,8 @@ export async function changePassword(req, res) {
   }
   const salt = await bcy.genSalt(12);
   const hashedNewPassword = await bcy.hash(newPassword, salt);
-  const reslut = await User.findByIdAndUpdate(
-    { _id: user._id },
+  const reslut = await User.findOneAndUpdate(
+    { email },
     { password: hashedNewPassword },
     { new: true }
   );

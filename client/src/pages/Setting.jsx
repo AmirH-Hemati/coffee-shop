@@ -37,9 +37,9 @@ function Setting() {
     <div className="w-full bg-red-500 h-full flex flex-col items-center p-8">
       <div className="w-[90%] bg-[#F9FAFC] flex gap-10">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n4D5jth4fm4GE7ut7lWW-04lnDO2OkD-sg&s"
+          src={user?.data?.avatar}
           alt=""
-          className="w-24 rounded-full"
+          className="w-24 object-cover h-24 rounded-full"
         />
         <div className="flex flex-col">
           <div className="flex items-center">

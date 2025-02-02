@@ -14,6 +14,7 @@ export function useChangePasswor() {
       toast.success("change password");
     },
     onError: (err) => {
+      console.log(err);
       toast.error(err.message);
     },
   });

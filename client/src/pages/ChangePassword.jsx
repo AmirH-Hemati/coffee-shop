@@ -7,10 +7,10 @@ function ChangePassword() {
   const { changePassword } = useChangePasswor();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newPasswor, setNewPasswor] = useState("second");
+  const [newPassword, setNewPassword] = useState("");
   function handelChangePassword(e) {
     e.preventDefault();
-    changePassword({ email, password, newPasswor });
+    changePassword({ email, password, newPassword });
   }
   return (
     <form
@@ -32,8 +32,8 @@ function ChangePassword() {
       <Input
         type="password"
         placeholder="New Password"
-        value={newPasswor}
-        onChange={(e) => setNewPasswor(e.target.value)}
+        value={newPassword}
+        onChange={(e) => setNewPassword(e.target.value)}
       />
       <Button typeButton={`large`} type={`submit`}>
         change Password
