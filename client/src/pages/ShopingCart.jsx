@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ProductNotExist from "../ui/ProductNotExist";
 
 function ShopingCart() {
-  const { mutate, data } = useProductDetails();
+  const { getProductDetails, products } = useProductDetails();
   const {
     handelIncreaseAddCart,
     handelDecreaseAddCart,
@@ -13,9 +13,9 @@ function ShopingCart() {
     removeProduct,
   } = useAddCart();
   useEffect(() => {
-    mutate(addCart);
-  }, [mutate, addCart]);
-  if (data?.data?.length < 1)
+    getProductDetails(addCart);
+  }, [getProductDetails, addCart]);
+  if (products?.data?.length < 1)
     return (
       <ProductNotExist message={`Please add some  products to Add Cart.`} />
     );
@@ -27,7 +27,7 @@ function ShopingCart() {
       </h1>
       <div className="flex w-full h-full flex-col   items-center justify-start gap-5 ">
         <div className="bg-[#f5eeee91] rounded-md  flex flex-col w-full md:w-4/5 md:max-h-[60%] max-h-[50%]  gap-2 items-center overflow-auto  ">
-          {data?.data?.map((product) => (
+          {products?.data?.map((product) => (
             <div
               key={product?._id}
               className="  bg-white p-2 w-full rounded-lg text-sm md:text-base justify-center  shadow-md flex text-black"
