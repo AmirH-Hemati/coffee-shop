@@ -2,6 +2,7 @@ import { ArrowDown2, ArrowUp2, Trash } from "iconsax-react";
 import { useAddCart } from "../context/ShopingContext";
 import { useProductDetails } from "../featurs/products/useProductDetails";
 import { useEffect } from "react";
+import ProductNotExist from "../ui/ProductNotExist";
 
 function ShopingCart() {
   const { mutate, data } = useProductDetails();
@@ -14,9 +15,13 @@ function ShopingCart() {
   useEffect(() => {
     mutate(addCart);
   }, [mutate, addCart]);
+  if (data?.data?.length < 1)
+    return (
+      <ProductNotExist message={`Please add some  products to Add Cart.`} />
+    );
 
   return (
-    <div className="h-full  px-6 py-2 font-montserrat   overflow-hidden bg-[#f5eeee91]">
+    <div className="h-full  px-6 py-2 font-montserrat  overflow-hidden bg-[#f5eeee91]">
       <h1 className="text-lg md:text-2xl font-semibold my-1 md:my-3">
         Shop Cart
       </h1>

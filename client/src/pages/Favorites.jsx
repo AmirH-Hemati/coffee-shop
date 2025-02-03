@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useFavorite } from "../context/FavoriteContext";
+import ProductNotExist from "../ui/ProductNotExist";
 
 function Favorites() {
   const { favorites } = useFavorite();
-  console.log(favorites);
+  if (favorites?.length < 1)
+    return <ProductNotExist message={`Please add some favorite products.`} />;
   return (
     <div className="h-full md:px-6 px-1 py-2 font-montserrat bg-[#f5eeee91] pb-20 md:pb-0 overflow-auto">
       <h1 className="text-lg md:text-2xl font-semibold my-4">Favorite</h1>
