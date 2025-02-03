@@ -8,36 +8,34 @@ function EditProduct() {
   const { products } = useProducts();
   const { removeProduct } = useRemoveProduct();
   return (
-    <div className="p-8 flex flex-col h-full w-full">
-      <h1 className=" text-3xl font-semibold">All Products</h1>
-      <div className="font-semibold mt-8 grid grid-cols-5 w-full bg-[#F9FAFB]  gap-6 rounded-t-md p-4 border-2 border-black/10">
+    <div className="md:p-8 flex flex-col h-full w-full text-sm md:text-base">
+      <h1 className=" text-lg md:text-3xl font-semibold">All Products</h1>
+      <div className="w-full font-semibold md:mt-8 grid grid-cols-[1fr_2fr_1fr_1fr] gap-3  bg-[#F9FAFB]  md:gap-6 rounded-t-md p-4 border-2 border-black/10">
         <p>image</p>
         <p>name</p>
         <p>price</p>
-        <p>price</p>
-        <p></p>
+        <p>edit</p>
       </div>
       <ul className="bg-white w-full   flex flex-col  overflow-auto h-[24%]    ">
         {products?.data.map((p) => (
           <li
             key={p._id}
-            className="grid grid-cols-5 w-full bg-white  px-4 py-6 gap-6 border-2 border-black/10"
+            className="grid grid-cols-[1fr_2fr_1fr_1fr] gap-3 w-full bg-white  px-4 py-6 md:gap-6 border-2 border-black/10"
           >
             <img src={p.image} alt="" className="w-20  object-cover" />
             <p className="truncate flex items-center">{p.name}</p>
             <p className="flex items-center">{p.price}</p>
-            <p className="flex items-center">{p.price}</p>
-            <div className="flex items-center gap-7">
+            <div className="flex items-center gap-2 md:gap-7">
               <Modal>
                 <Modal.Open openies="openEditModal">
-                  <Edit size="32" color="#00512c" className="cursor-pointer" />
+                  <Edit size="28" color="#00512c" className="cursor-pointer" />
                 </Modal.Open>
                 <Modal.Window name={`openEditModal`}>
                   <EditProductForm p={p} />
                 </Modal.Window>
               </Modal>
               <Trash
-                size="32"
+                size="28"
                 color="#00512c"
                 onClick={() => removeProduct(p._id)}
                 className="cursor-pointer"
