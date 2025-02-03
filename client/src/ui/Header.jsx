@@ -29,7 +29,7 @@ function Header() {
           <Home2 size="32" color="#FF8A65" className="md:hidden" />
           <p className="hidden md:block">Home</p>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/favoriets">
           <Heart size="32" color="#FF8A65" className="md:hidden" />
           <p className="hidden md:block">Favoriets</p>
         </NavLink>
