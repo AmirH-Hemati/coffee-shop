@@ -28,10 +28,6 @@ function Setting() {
     formData.append("email", email);
     formData.append("file", file);
     editProfile(formData);
-    setEmail("");
-    setUserName("");
-    setImage("");
-    // call to api and send form data and rechange data
   }
   return (
     <div className="w-full bg-[#F9F5F5] h-full flex flex-col items-center p-8">
@@ -76,10 +72,10 @@ function Setting() {
         </FormLabel>
         <p className=""></p>
 
-        <div className="flex w-[90%] justify-between  font-semibold">
+        <div className="flex w-[90%] justify-between  font-semibold ">
           <p>Your Profile Picture *</p>
           <label htmlFor="file">
-            <div className=" w-40 h-40 rounded-sm bg-white border border-dotted border-black">
+            <div className=" w-40 h-40 cursor-pointer rounded-sm bg-white border border-dotted border-black">
               <img
                 src={image ? image : user?.data?.avatar}
                 alt=""

@@ -4,7 +4,7 @@ import { Add, AlignLeft, Notepad, User } from "iconsax-react";
 function LayoutAdminPage() {
   return (
     <div className="flex h-full w-full">
-      <div className="w-1/5 h-full z-20 [box-shadow:2px_2px_10px_rgba(0,0,0,0.1)] px-3 py-6 ">
+      <div className="w-1/5 h-full z-20 bg-white [box-shadow:2px_2px_10px_rgba(0,0,0,0.1)] px-3 py-6 ">
         <Sidebar
           data={[
             {

@@ -33,6 +33,9 @@ function ShopingCartProvider({ children }) {
   function getTotalQty() {
     return addCart.reduce((sum, item) => sum + item.qty, 0);
   }
+  function removeProduct(id) {
+    return setAddCart((addCart) => addCart.filter((item) => item.id !== id));
+  }
   console.log(addCart);
   return (
     <shopingCartContext.Provider
@@ -42,6 +45,7 @@ function ShopingCartProvider({ children }) {
         handelDecreaseAddCart,
         getQty,
         getTotalQty,
+        removeProduct,
       }}
     >
       {children}

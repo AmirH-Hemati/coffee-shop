@@ -5,8 +5,12 @@ import { useEffect } from "react";
 
 function ShopingCart() {
   const { mutate, data } = useProductDetails();
-  const { handelIncreaseAddCart, handelDecreaseAddCart, addCart } =
-    useAddCart();
+  const {
+    handelIncreaseAddCart,
+    handelDecreaseAddCart,
+    addCart,
+    removeProduct,
+  } = useAddCart();
   useEffect(() => {
     mutate(addCart);
   }, [mutate, addCart]);
@@ -59,13 +63,13 @@ function ShopingCart() {
                       onClick={() => handelDecreaseAddCart(product?._id)}
                     />
                   </div>
-                  {/* <Trash
+                  <Trash
                     size="24"
                     color="black"
                     variant="Bold"
                     className="cursor-pointer"
-                    onClick={() => removeProduct(product?.id)}
-                  /> */}
+                    onClick={() => removeProduct(product?._id)}
+                  />
                 </div>
               </div>
             </div>
