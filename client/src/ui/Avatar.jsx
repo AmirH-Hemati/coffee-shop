@@ -6,7 +6,7 @@ function Avatar({ onClick }) {
     <img
       onClick={onClick}
       src={user?.data?.avatar}
-      className="w-8 h-8 rounded-full border-2 border-black cursor-pointer"
+      className="w-8 h-8 rounded-full border-2 border-[#00512C] cursor-pointer"
       alt={user?.data?.name}
     />
   );

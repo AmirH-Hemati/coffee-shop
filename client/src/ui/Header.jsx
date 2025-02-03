@@ -9,6 +9,7 @@ import {
   ArchiveAdd,
   CloseSquare,
   HeartAdd,
+  LogoutCurve,
   Notepad,
   Setting,
   Setting2,
@@ -58,7 +59,7 @@ function User({ setIsOpen, isOpen }) {
   const { user } = useUser();
   return (
     <div
-      className={` rounded-t-2xl  flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
+      className={`[box-shadow:4px_0px_2px_rgba(0,0,0,0.1)] rounded-t-2xl  flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
         isOpen ? "left-0" : "-left-full"
       } `}
     >
@@ -68,8 +69,8 @@ function User({ setIsOpen, isOpen }) {
           <Avatar />
         </div>
         <CloseSquare
-          size="40"
-          color="black"
+          size="36"
+          color="#00512C"
           onClick={() => setIsOpen(false)}
           className="cursor-pointer"
         />
@@ -78,24 +79,25 @@ function User({ setIsOpen, isOpen }) {
         data={[
           {
             title: "Your Favorites",
-            icon: <ArchiveAdd size="32" color="#FF8A65" />,
+            icon: <ArchiveAdd size="32" color="#00512C" />,
             route: "/favoriets",
           },
           {
             title: "Setting",
-            icon: <Setting2 size="32" color="#FF8A65" />,
+            icon: <Setting2 size="32" color="#00512C" />,
             route: "/setting",
           },
           {
             title: "Change Password",
-            icon: <Setting size="32" color="#FF8A65" />,
+            icon: <Setting size="32" color="#00512C" />,
             route: "/changePassword",
           },
         ]}
       />
-      <p className="cursor-pointer hover:bg-[#F9FAFB] p-3 rounded-sm">
-        Sign Out
-      </p>
+      <div className="flex hover:bg-[#F9FAFB] p-3 rounded-sm items-center gap-3  cursor-pointer">
+        <LogoutCurve size="32" color="#00512C" />
+        <p>Sign Out</p>
+      </div>
     </div>
   );
 }
