@@ -3,10 +3,20 @@ import { useAuth } from "../context/AuthContext";
 import { useAddCart } from "../context/ShopingContext";
 import Button from "./Button";
 import NavLink from "./NavLink";
-import { CloseSquare, ShoppingCart } from "iconsax-react";
+import {
+  Add,
+  AlignLeft,
+  ArchiveAdd,
+  CloseSquare,
+  HeartAdd,
+  Notepad,
+  Setting,
+  Setting2,
+  ShoppingCart,
+} from "iconsax-react";
 import { useUser } from "../featurs/authorizaion/useUser";
-import { Link } from "react-router-dom";
 import Avatar from "./Avatar";
+import Sidebar from "./Sidebar";
 function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
@@ -48,7 +58,7 @@ function User({ setIsOpen, isOpen }) {
   const { user } = useUser();
   return (
     <div
-      className={` rounded-t-2xl flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
+      className={` rounded-t-2xl  flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
         isOpen ? "left-0" : "-left-full"
       } `}
     >
@@ -64,22 +74,28 @@ function User({ setIsOpen, isOpen }) {
           className="cursor-pointer"
         />
       </div>
-      
-      <Link to={`/favoriets`}>
-        <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
-          Your Favorites
-        </p>
-      </Link>
-
-      <Link to={`/setting`}>
-        <p className="cursor-pointer bg-red-200 p-2 rounded-sm">setting</p>
-      </Link>
-      <Link to={`/changePassword`}>
-        <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
-          change password
-        </p>
-      </Link>
-      <p className="cursor-pointer bg-red-200 p-2 rounded-sm">Sign Out</p>
+      <Sidebar
+        data={[
+          {
+            title: "Your Favorites",
+            icon: <ArchiveAdd size="32" color="#FF8A65" />,
+            route: "/favoriets",
+          },
+          {
+            title: "Setting",
+            icon: <Setting2 size="32" color="#FF8A65" />,
+            route: "/setting",
+          },
+          {
+            title: "Change Password",
+            icon: <Setting size="32" color="#FF8A65" />,
+            route: "/changePassword",
+          },
+        ]}
+      />
+      <p className="cursor-pointer hover:bg-[#F9FAFB] p-3 rounded-sm">
+        Sign Out
+      </p>
     </div>
   );
 }
