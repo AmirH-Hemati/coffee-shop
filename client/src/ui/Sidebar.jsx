@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-function Sidebar({ data }) {
+function Sidebar({ data, onClick }) {
   return (
     <div className="w-full h-full bg-white flex flex-col gap-6">
       {data?.map((item) => (
         <NavLink
+          onClick={onClick}
           key={item.route}
           to={item.route}
           className={({ isActive }) =>
