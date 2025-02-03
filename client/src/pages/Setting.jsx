@@ -30,12 +30,12 @@ function Setting() {
     editProfile(formData);
   }
   return (
-    <div className="w-full bg-[#F9F5F5] h-full flex flex-col items-center p-8">
-      <div className="w-[90%] bg-[#F9FAFC] flex gap-10">
+    <div className="w-full bg-[#F9F5F5] h-full flex flex-col items-center p-4 text-sm">
+      <div className="w-full bg-[#F9FAFC] flex gap-10">
         <img
           src={user?.data?.avatar}
           alt=""
-          className="w-24 object-cover h-24 rounded-full"
+          className="w-12 h-12 md:w-24 md:h-24 object-cover rounded-full"
         />
         <div className="flex flex-col">
           <div className="flex items-center">
@@ -51,7 +51,7 @@ function Setting() {
         </div>
       </div>
       <form
-        className="w-[90%] flex flex-col gap-6"
+        className="w-full flex flex-col gap-6"
         onSubmit={handelChangeProfile}
       >
         <FormLabel label={`User Name`}>
@@ -72,14 +72,14 @@ function Setting() {
         </FormLabel>
         <p className=""></p>
 
-        <div className="flex w-[90%] justify-between  font-semibold ">
+        <div className="flex w-full justify-between  font-semibold ">
           <p>Your Profile Picture *</p>
           <label htmlFor="file">
-            <div className=" w-40 h-40 cursor-pointer rounded-sm bg-white border border-dotted border-black">
+            <div className=" w-22 h-22 rounded-sm p-1 md:w-40 md:h-40 cursor-pointer  bg-white border border-dotted border-black">
               <img
                 src={image ? image : user?.data?.avatar}
                 alt=""
-                className=" h-full rounded-full object-cover"
+                className=" h-full  object-cover rounded-full"
               />
             </div>
           </label>

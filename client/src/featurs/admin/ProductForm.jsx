@@ -15,7 +15,7 @@ function ProductForm() {
   return (
     <form
       onSubmit={handelCreateProduct}
-      className="flex flex-col h-[90%] overflow-auto gap-1  md:gap-4"
+      className="flex flex-col h-[90%] gap-1  md:gap-4"
     >
       <FormLabel label="Name Product">
         <Input type="text" name="name" id="name" />
