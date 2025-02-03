@@ -3,9 +3,10 @@ import { useAuth } from "../context/AuthContext";
 import { useAddCart } from "../context/ShopingContext";
 import Button from "./Button";
 import NavLink from "./NavLink";
-import { ShoppingCart } from "iconsax-react";
+import { CloseSquare, ShoppingCart } from "iconsax-react";
 import { useUser } from "../featurs/authorizaion/useUser";
 import { Link } from "react-router-dom";
+import Avatar from "./Avatar";
 function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
@@ -35,12 +36,8 @@ function Header() {
           )}
           <ShoppingCart size="32" color="black" />
         </NavLink>
-        <img
-          src={user?.data?.avatar}
-          alt=""
-          className=" cursor-pointer w-10 h-10 px-1 border-2 border-black  object-cover rounded-full"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        />
+        <Avatar onClick={() => setIsOpen((isOpen) => !isOpen)} />
+
         <User setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
     </header>
@@ -51,15 +48,21 @@ function User({ setIsOpen, isOpen }) {
   const { user } = useUser();
   return (
     <div
-      className={`flex flex-col gap-8 bg-red-100 p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
+      className={`flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
         isOpen ? "left-0" : "-left-full"
       } `}
     >
       <div className="flex w-full justify-between items-center">
-        <p>{user?.data?.userName}</p>
-        <p onClick={() => setIsOpen(false)} className="cursor-pointer">
-          x
-        </p>
+        <div className="flex flex-row-reverse items-center gap-2">
+          <p className="text-xl font-semibold">{user?.data?.userName}</p>
+          <Avatar />
+        </div>
+        <CloseSquare
+          size="40"
+          color="black"
+          onClick={() => setIsOpen(false)}
+          className="cursor-pointer"
+        />
       </div>
       <Link to={`/favoriets`}>
         <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
