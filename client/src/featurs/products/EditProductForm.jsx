@@ -12,7 +12,6 @@ function EditProductForm({ p, onClose }) {
   const [file, setFile] = useState("");
   function handelEditProduct(e) {
     e.preventDefault();
-    console.log("test");
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", price);
@@ -21,7 +20,7 @@ function EditProductForm({ p, onClose }) {
     editProduct({ id: p?._id, formData });
   }
   return (
-    <form onSubmit={handelEditProduct} className="flex flex-col p-2  gap-6">
+    <form onSubmit={handelEditProduct} className="flex flex-col p-2  gap-6 ">
       <FormLabel label="Name Product">
         <Input
           type="text"
@@ -46,7 +45,7 @@ function EditProductForm({ p, onClose }) {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="outline-none w-1/2 text-black border-2 border-black/30 rounded-sm"
+          className="outline-none w-full md:w-1/2 text-black border-2 border-black/30 rounded-sm"
         ></textarea>
       </FormLabel>
       <input
@@ -56,10 +55,10 @@ function EditProductForm({ p, onClose }) {
         onChange={(e) => setFile(e.target.files[0])}
       />
       <div className="flex gap-4">
-        <Button type="reset" onClick={onClose}>
+        <Button type="reset" onClick={onClose} typeButton={`cansel`}>
           Cansel
         </Button>
-        <Button type="submit">Edit Product</Button>
+        <Button type="submit" typeButton={`large`}>Edit Product</Button>
       </div>
     </form>
   );
