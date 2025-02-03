@@ -10,14 +10,12 @@ function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
   const [first, setFirst] = useState(false);
+  const { user } = useUser();
   return (
     <header className=" w-full md:flex flex-row-reverse justify-between h-16 hidden border-b border-b-gray-600  items-center p-4 gap-5">
       <div className="flex gap-6 flex-row-reverse">
         <NavLink path="/">
           <p>home</p>
-        </NavLink>
-        <NavLink path="/favoriets">
-          <p>favorites</p>
         </NavLink>
         <NavLink path="/login">
           <p>login</p>
@@ -28,19 +26,20 @@ function Header() {
           </NavLink>
         )}
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
         <NavLink path="/cart" classNameStyle="">
           {getTotalQty() > 0 && (
-            <Button style={`absolute left-1 -top-1`} typeButton="circleButton">
+            <Button style={`absolute left-2 top-2`} typeButton="circleButton">
               {getTotalQty()}
             </Button>
           )}
           <ShoppingCart size="32" color="black" />
         </NavLink>
-        <UserSquare
-          size="32"
-          color="#FF8A65"
-          onClick={() => setFirst(!first)}
+        <img
+          src={user?.data?.avatar}
+          alt=""
+          className=" cursor-pointer w-10 h-10 px-1 border-2 border-black  object-cover rounded-full"
+          onClick={() => setFirst((first) => !first)}
         />
         <User setFirst={setFirst} first={first} />
       </div>
