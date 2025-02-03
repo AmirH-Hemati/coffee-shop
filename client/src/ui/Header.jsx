@@ -3,13 +3,13 @@ import { useAuth } from "../context/AuthContext";
 import { useAddCart } from "../context/ShopingContext";
 import Button from "./Button";
 import NavLink from "./NavLink";
-import { ShoppingCart, UserSquare } from "iconsax-react";
+import { ShoppingCart } from "iconsax-react";
 import { useUser } from "../featurs/authorizaion/useUser";
 import { Link } from "react-router-dom";
 function Header() {
   const { getTotalQty } = useAddCart();
   const { token, role } = useAuth();
-  const [first, setFirst] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { user } = useUser();
   return (
     <header className=" w-full md:flex flex-row-reverse justify-between h-16 hidden border-b border-b-gray-600  items-center p-4 gap-5">
@@ -39,25 +39,25 @@ function Header() {
           src={user?.data?.avatar}
           alt=""
           className=" cursor-pointer w-10 h-10 px-1 border-2 border-black  object-cover rounded-full"
-          onClick={() => setFirst((first) => !first)}
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
         />
-        <User setFirst={setFirst} first={first} />
+        <User setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
     </header>
   );
 }
 
-function User({ setFirst, first }) {
+function User({ setIsOpen, isOpen }) {
   const { user } = useUser();
   return (
     <div
       className={`flex flex-col gap-8 bg-red-100 p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
-        first ? "left-0" : "-left-full"
+        isOpen ? "left-0" : "-left-full"
       } `}
     >
       <div className="flex w-full justify-between items-center">
         <p>{user?.data?.userName}</p>
-        <p onClick={() => setFirst(false)} className="cursor-pointer">
+        <p onClick={() => setIsOpen(false)} className="cursor-pointer">
           x
         </p>
       </div>
