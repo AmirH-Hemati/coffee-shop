@@ -13,32 +13,37 @@ function ChangePassword() {
     changePassword({ email, password, newPassword });
   }
   return (
-    <form
-      onSubmit={handelChangePassword}
-      className="flex flex-col gap-5 justify-center items-center h-full"
-    >
-      <Input
-        type="text"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <Input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Input
-        type="password"
-        placeholder="New Password"
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
-      />
-      <Button typeButton={`large`} type={`submit`}>
-        change Password
-      </Button>
-    </form>
+    <div className="w-full h-full flex  justify-center items-center bg-white">
+      <form
+        onSubmit={handelChangePassword}
+        className="flex flex-col gap-5 justify-center items-center border-2 border-black/20 rounded-sm p-6  w-80"
+      >
+        <Input
+          type="text"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={`md:w-full`}
+        />
+        <Input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={`md:w-full`}
+        />
+        <Input
+          type="password"
+          placeholder="New Password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          style={`md:w-full `}
+        />
+        <Button typeButton={`large`} type={`submit`} style={`md:w-full w-full`}>
+          change Password
+        </Button>
+      </form>
+    </div>
   );
 }
 

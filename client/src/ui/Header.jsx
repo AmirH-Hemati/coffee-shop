@@ -4,7 +4,9 @@ import { useAddCart } from "../context/ShopingContext";
 import {
   ArchiveAdd,
   CloseSquare,
+  Heart,
   Home2,
+  LoginCurve,
   LogoutCurve,
   Setting,
   Setting2,
@@ -25,12 +27,16 @@ function Header() {
       <div className="flex gap-6 md:flex-row-reverse w-1/2  justify-around md:justify-start ">
         <NavLink to="/">
           <Home2 size="32" color="#FF8A65" className="md:hidden" />
-          <p className="hidden md:block">home</p>
+          <p className="hidden md:block">Home</p>
+        </NavLink>
+        <NavLink to="/">
+          <Heart size="32" color="#FF8A65" className="md:hidden" />
+          <p className="hidden md:block">Favoriets</p>
         </NavLink>
         {token && role === "admin" && (
           <NavLink to="/adminDashboard">
             <UserEdit size="32" color="#FF8A65" className="md:hidden" />
-            <p className="hidden md:block">panelAdmin</p>
+            <p className="hidden md:block">PanelAdmin</p>
           </NavLink>
         )}
       </div>
@@ -39,7 +45,8 @@ function Header() {
           <Avatar onClick={() => setIsOpen((isOpen) => !isOpen)} />
         ) : (
           <NavLink to="/login">
-            <p>login</p>
+            <p className="hidden md:block">Login</p>
+            <LoginCurve size="32" color="#FF8A65" className="md:hidden" />
           </NavLink>
         )}
         <NavLink to="/cart" classNameStyle="">

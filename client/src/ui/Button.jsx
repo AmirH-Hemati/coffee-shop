@@ -13,7 +13,7 @@ function Button({ children, onClick, type, typeButton, style }) {
     styles =
       "w-1/2 md:w-1/3  font-semibold text-sm bg-gray-400 py-3 flex items-center justify-center  text-white rounded-sm cursor-pointer";
   return (
-    <button type={type} className={`${styles} ${style}`} onClick={onClick}>
+    <button type={type} className={`${style} ${styles} `} onClick={onClick}>
       {children}
     </button>
   );
