@@ -7,14 +7,16 @@ import Button from "../../ui/Button";
 function ProductForm() {
   const { addProduct } = useAddProduct();
   const [preview, setPreview] = useState("");
-  console.log(preview);
   function handelCreateProduct(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     addProduct(formData);
   }
   return (
-    <form onSubmit={handelCreateProduct} className="flex flex-col  gap-4 ">
+    <form
+      onSubmit={handelCreateProduct}
+      className="flex flex-col h-[90%] overflow-auto gap-1  md:gap-4"
+    >
       <FormLabel label="Name Product">
         <Input type="text" name="name" id="name" />
       </FormLabel>
@@ -25,12 +27,12 @@ function ProductForm() {
         <textarea
           name="description"
           id="description"
-          className="outline-none w-1/2 text-black border-2 border-black/30 rounded-sm"
+          className="outline-none w-full md:w-1/2 text-black border-2 border-black/30 rounded-sm"
         ></textarea>
       </FormLabel>
       <label
         htmlFor="file"
-        className="w-full border-2 border-black/30 border-dotted h-28 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
+        className="w-full border-2 border-black/30 border-dotted h-14 md:h-28 rounded-sm flex items-center justify-center cursor-pointer text-2xl"
       >
         {preview ? (
           <img src={preview} className="w-full object-cover h-full" />
@@ -45,7 +47,9 @@ function ProductForm() {
         className="hidden"
         onChange={(e) => setPreview(URL.createObjectURL(e.target.files[0]))}
       />
-      <Button typeButton={`large`} type="submit">create product</Button>
+      <Button typeButton={`large`} type="submit">
+        create product
+      </Button>
     </form>
   );
 }
