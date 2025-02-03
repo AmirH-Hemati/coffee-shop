@@ -48,7 +48,7 @@ function User({ setIsOpen, isOpen }) {
   const { user } = useUser();
   return (
     <div
-      className={`flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
+      className={` rounded-t-2xl flex flex-col gap-8 bg-white p-8 w-1/4 h-full top-0  z-50 fixed -left-full transition-all duration-500 ${
         isOpen ? "left-0" : "-left-full"
       } `}
     >
@@ -64,6 +64,7 @@ function User({ setIsOpen, isOpen }) {
           className="cursor-pointer"
         />
       </div>
+      
       <Link to={`/favoriets`}>
         <p className="cursor-pointer bg-red-200 p-2 rounded-sm">
           Your Favorites
