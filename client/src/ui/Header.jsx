@@ -21,7 +21,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useUser();
   return (
-    <header className="fixed md:relative bottom-0 bg-white left-0 w-full flex md:flex-row-reverse justify-between h-16  border-b border-b-gray-600  items-center p-4 gap-5">
+    <header className="fixed z-50 md:relative bottom-0 bg-white left-0 w-full flex md:flex-row-reverse justify-between h-16  border-b border-b-gray-600  items-center p-4 gap-5">
       <div className="flex gap-6 md:flex-row-reverse w-1/2  justify-around md:justify-start ">
         <NavLink to="/">
           <Home2 size="32" color="#FF8A65" className="md:hidden" />
