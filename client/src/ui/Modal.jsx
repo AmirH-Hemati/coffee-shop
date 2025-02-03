@@ -25,12 +25,12 @@ function Window({ children, name }) {
   const { isOpen, close } = useContext(modalContext);
   if (name !== isOpen) return null;
   return (
-    <div className="fixed top-0 left-0 bg-gray-700/70 w-full h-screen flex justify-center items-center [backdrop-filter:blur(10px)]">
+    <div className="fixed z-50 top-0 left-0 bg-gray-700/70 w-full h-screen flex justify-center items-center [backdrop-filter:blur(10px)]">
       <div className="w-[80%]  bg-white flex flex-col p-6 rounded-sm [box-shadow:2px_2px_10px_black)]">
         <CloseSquare
           size="32"
           color="#00512c"
-          onClick={onclose}
+          onClick={close}
           className="self-end cursor-pointer"
         />
         <div>{cloneElement(children, { onClose: close })}</div>

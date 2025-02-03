@@ -1,6 +1,6 @@
 function FormLabel({ label, children }) {
   return (
-    <div className="flex items-center justify-between border-b-2 border-black/10 py-6 ">
+    <div className="flex items-center justify-between border-b-2 border-black/10 py-6 font-semibold">
       <label htmlFor={children?.props?.id} className="flex items-center">
         {label}
       </label>

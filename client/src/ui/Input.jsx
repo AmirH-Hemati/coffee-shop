@@ -7,7 +7,7 @@ function Input({ type, name, style, id, onChange, value, placeholder }) {
       onChange={onChange}
       placeholder={placeholder}
       id={id}
-      className={`outline-none w-1/2 text-black border-2 border-black/30 rounded-sm p-2 ${style}`}
+      className={`outline-none w-1/2 bg-white text-black border-2 border-black/30 rounded-sm p-2 ${style}`}
     />
   );
 }

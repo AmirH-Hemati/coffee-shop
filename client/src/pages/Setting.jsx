@@ -34,7 +34,7 @@ function Setting() {
     // call to api and send form data and rechange data
   }
   return (
-    <div className="w-full bg-red-500 h-full flex flex-col items-center p-8">
+    <div className="w-full bg-[#F9F5F5] h-full flex flex-col items-center p-8">
       <div className="w-[90%] bg-[#F9FAFC] flex gap-10">
         <img
           src={user?.data?.avatar}
@@ -76,10 +76,10 @@ function Setting() {
         </FormLabel>
         <p className=""></p>
 
-        <div className="flex w-[90%] justify-between">
+        <div className="flex w-[90%] justify-between  font-semibold">
           <p>Your Profile Picture *</p>
           <label htmlFor="file">
-            <div className=" w-40 h-40 rounded-sm bg-red-500  border border-dotted border-black">
+            <div className=" w-40 h-40 rounded-sm bg-white border border-dotted border-black">
               <img
                 src={image ? image : user?.data?.avatar}
                 alt=""

@@ -7,7 +7,7 @@ function Layout() {
     <div className="flex flex-col h-screen w-full overflow-hidden">
       <Header />
       <MenuMobile />
-      <main className=" flex-1 ">
+      <main className=" flex-1 bg-[#F9F5F5]">
         <Outlet />
       </main>
     </div>
