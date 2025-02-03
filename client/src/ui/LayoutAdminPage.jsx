@@ -67,9 +67,7 @@ function LayoutAdminPage() {
           ]}
         />
       </div>
-      <div className="w-full md:w-4/5">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }

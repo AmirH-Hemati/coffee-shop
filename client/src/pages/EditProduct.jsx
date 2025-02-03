@@ -16,7 +16,7 @@ function EditProduct() {
         <p>price</p>
         <p>edit</p>
       </div>
-      <ul className="bg-white w-full   flex flex-col  overflow-auto h-[24%]    ">
+      <ul className="bg-white w-full   flex flex-col  overflow-y-auto h-[20%] md:h-full    ">
         {products?.data.map((p) => (
           <li
             key={p._id}
